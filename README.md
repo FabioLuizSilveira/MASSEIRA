@@ -1,2 +1,2 @@
-# MASSEIRA
-sistema de calculadora de masseira
+# masseira
+sistema para ver quantidade de masseira pelas peças
