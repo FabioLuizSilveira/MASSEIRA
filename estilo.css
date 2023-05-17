@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+header{
+    background-color: #130b24;
+    height: 12vh;
+}
+
+body{
+    background-color: rgb(233, 233, 233);
+}
+section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+}
+
+section h2{
+    font-family: Trebuchet MS, sans-serif;
+    margin-bottom: 3%;
+    font-size: 4vh;
+}
+section{
+    font-family: Trebuchet MS, sans-serif;
+    font-size: 4vh;
+}
+section select{
+    margin-top: 4%;
+    margin-bottom: 4%;
+    border: 3px solid #130b24;
+    border-radius: 6%;
+    font-family: Trebuchet MS, sans-serif;
+    height: 40px;
+    background-color: rgb(233, 233, 233);
+}
+section button{
+    margin-top: 4%;
+    margin-bottom: 4%;
+    border: 2px solid #333236;
+    border-radius: 2%;
+    font-family: Trebuchet MS, sans-serif;
+    font-size: 4vh;
+    height: 70px;
+    width: 140px;
+    background-color: rgb(112, 235, 101);
+}
+
+section input{
+    margin-top: 4%;
+    border: 3px solid #130b24;
+    font-family: Trebuchet MS, sans-serif;
+    height: 30px;
+    width: 40px;
+    background-color: rgb(233, 233, 233);
+}
+
+.respostas div{
+    font-size: 3vh;
+    
+}
+
+@media (max-width: 500px) {
+    section{
+        font-family: Trebuchet MS, sans-serif;
+        font-size: 2vh;
+    }
+  }
