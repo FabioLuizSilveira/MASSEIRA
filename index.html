@@ -5,31 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MASSEIRA</title>
+    <link rel="stylesheet" href="estilo.css">
     
     <script src="script.js" defer></script>
 </head>
 <html>
 <body>
-        <h1>Cálculo de Masseiras</h1>
-
-        <label for="enchimento">Como vai encher? :</label>
+    <header>
+        <h1><center><img src="./avanttiuse.png" alt="logo avantti"></center></h1>
+    </header>
+    <section>
+        <h2>Cálculo de Masseiras</h2>
+        <div>
+            <label for="enchimento">Como vai encher? :</label>
         <select id="enchimento">
             <option value="100">100%</option>
             <option value="concreto">Massa + Concreto</option>
         </select>
-        <br>
-        <br>
-        <label for="masseira">Selecione o tipo de masseira:</label>
+        </div>
+        
+        <div>
+            <label for="masseira">Selecione o tipo de masseira:</label>
         <select id="masseira">
-        <option value="Riviera">Riviera</option>
-        <option value="Stratti">Stratti</option>
-        <option value="Evora">Évora/Liso</option>
-        <option value="Dreno">Dreno</option>
-        <option value="Madeira">Madeira/Concreto</option>
+            <option value="Riviera">Riviera</option>
+            <option value="Stratti">Stratti</option>
+            <option value="Evora">Évora/Liso</option>
+            <option value="Dreno">Dreno</option>
+            <option value="Madeira">Madeira/Concreto</option>
         </select>
-        <br>
-        <br>
-        <label for="forma">Selecione a forma:</label>
+        </div>
+        <div>
+            <label for="forma">Selecione a forma:</label>
         <select id="forma">
             <option value="50x50x2.5">50x50x2.5</option>
             <option value="60x60x2.5">60x60x2.5</option>
@@ -40,29 +46,27 @@
             <option value="60x60x5">60x60x5</option>
             <option value="60x60x8">60x60x8</option>
         </select>
-    
-        <br><br>
-    
-        <label for="quantidade">Quantidade de formas:</label>
-        <input type="number" id="quantidade" min="1" value="1">
-    
-        <br><br>
-    
-        <button onclick="calcularMasseiras()">Calcular</button>
-    
-        <br><br>
-    
-        <div id="resultado"></div>
-        <div id="meias-masseiras"></div>
-        <div id="sobra"></div>
-        <div id="resultadoConcreto"></div>
-        <div id="meias-masseirasConcreto"></div>
-        <div id="sobraConcreto"></div>
-        <div id="exemplo"></div>
-        <div id="paraExemplo"></div>
+        </div>
+        <div>
+            <label for="quantidade">Quantidade de formas:</label>
+            <input type="number" id="quantidade" min="1" value="1">
+        </div>
+        <div>
+            <button onclick="calcularMasseiras()">Calcular</button>
+        </div>
+
+        <div class="respostas">
+            <div id="resultado"></div>
+            <div id="meias-masseiras"></div>
+            <div id="sobra"></div>
+            <div id="resultadoConcreto"></div>
+            <div id="meias-masseirasConcreto"></div>
+            <div id="sobraConcreto"></div>
+            <div id="exemplo"></div>
+            <div id="paraExemplo"></div>
+        </div>
         
-        
-</body>
+    </section>    
 </body>
 </html>
     
