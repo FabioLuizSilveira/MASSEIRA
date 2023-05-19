@@ -41,7 +41,9 @@ function calcularMasseiras() {
     // RECONHECER O TIPO DE ENCHIMENTO
     var enchimento = {
         '100': 1,
-        'concreto': 2
+        '60-40': 2,
+        '70-30': 3,
+        '25-75': 4
     }
     var tipo = enchimento[tipoSelecionado]
 
@@ -61,9 +63,15 @@ function calcularMasseiras() {
     if(tipo === 1){
         var pesoFormaConcreto = 0
         var pesoFormaMassa = pesoFormaTotal; 
-    }else{
+    }else if(tipo === 2){
         var pesoFormaConcreto = pesoFormaTotal * 0.4;
         var pesoFormaMassa = pesoFormaTotal * 0.6;
+    }else if(tipo === 3){
+        var pesoFormaConcreto = pesoFormaTotal * 0.3;
+        var pesoFormaMassa = pesoFormaTotal * 0.7;
+    }else if(tipo === 4){
+        var pesoFormaConcreto = pesoFormaTotal * 0.75;
+        var pesoFormaMassa = pesoFormaTotal * 0.25;
     }
     
     // PESO DAS MASSAS
