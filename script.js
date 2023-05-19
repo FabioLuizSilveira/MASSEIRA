@@ -5,9 +5,11 @@ function selecionarMasseira() {
     var formasDisponiveis = [];
 
     // FALAR QUAL AS FORMAS PARA MASSEIRA
-    if (masseiraSelecionada === "Riviera" || masseiraSelecionada === "Stratti" || masseiraSelecionada === "Evora") {
+    if (masseiraSelecionada === "Riviera" || masseiraSelecionada === "Stratti") {
         formasDisponiveis = ["50x50x2.5", "60x60x2.5", "100x100x2.5"];
-    } else if (masseiraSelecionada === "Dreno") {
+    } else if (masseiraSelecionada === "Evora") {
+        formasDisponiveis = ["50x50x2.5", "60x60x1.5", "60x60x2", "60x60x2.5", "100x100x2.5"];
+    }else if (masseiraSelecionada === "Dreno") {
         formasDisponiveis = ["60x60x5","60x60x8","50x33x5"];
     } else if (masseiraSelecionada === "Madeira") {
         formasDisponiveis = ["MADEIRA", "INDUSTRIAL"];
@@ -51,6 +53,8 @@ function calcularMasseiras() {
     var formas = {
         '50x50x2.5': 13.75,
         '60x60x2.5': 19.8,
+        '60x60x2': 15.84,
+        '60x60x1.5': 11.88,
         '100x100x2.5': 55,
         'MADEIRA': 11,
         'INDUSTRIAL': 13.2,
@@ -99,12 +103,12 @@ function calcularMasseiras() {
         // VARIAVEIS DE MASSA
         var numMasseiras = Math.floor(quantidadeFormas * pesoFormaMassa / pesoMasseira);
         var numMeiasMasseiras = 0;
-        var kilosSobrando = (numMasseiras * pesoMasseira) + (numMeiasMasseiras * pesoMeiaMasseira) - (quantidadeFormas * pesoFormaMassa);
+        var kilosSobrando = Math.floor(numMasseiras * pesoMasseira) + (numMeiasMasseiras * pesoMeiaMasseira) - (quantidadeFormas * pesoFormaMassa);
         
         // VARIAVEIS DE CONCRETO
         var numConcreto =  Math.floor(quantidadeFormas * pesoFormaConcreto / pesoConcreto);
         var numMeioConcreto = 0;
-        var kilosSobrandoConcreto = (numConcreto * pesoConcreto) + (numMeioConcreto * pesoMeioConcreto) - (quantidadeFormas * pesoFormaConcreto);
+        var kilosSobrandoConcreto = Math.floor(numConcreto * pesoConcreto) + (numMeioConcreto * pesoMeioConcreto) - (quantidadeFormas * pesoFormaConcreto);
         
         // RECONHECIMENTO DO EXEMPLO
         var exemplo = 0;
@@ -116,7 +120,7 @@ function calcularMasseiras() {
         // RECONHECIMENTO DE VARIAVEIS
         var numMasseiras = Math.floor((quantidadeFormas * pesoFormaTotal) / pesoMasseira);
         var numMeiasMasseiras = 0;
-        var kilosSobrando = (numMasseiras * pesoMasseira) + (numMeiasMasseiras * pesoMeiaMasseira) - (quantidadeFormas * pesoFormaTotal);
+        var kilosSobrando = Math.floor(numMasseiras * pesoMasseira) + (numMeiasMasseiras * pesoMeiaMasseira) - (quantidadeFormas * pesoFormaTotal);
         var exemplo = Math.floor(kilosSobrando / pesoFormaTotal);
 
         // FAZER COM QUE MOSTRE MEIA MASSEIRA
@@ -162,7 +166,7 @@ function calcularMasseiras() {
         }else if(kilosSobrando > pesoMeiaMasseira){
             numMasseiras = numMasseiras + 1
         }
-        kilosSobrando = (numMasseiras * pesoMasseira) + (numMeiasMasseiras * pesoMeiaMasseira) - (quantidadeFormas * pesoFormaMassa);
+        kilosSobrando = Math.floor(numMasseiras * pesoMasseira) + (numMeiasMasseiras * pesoMeiaMasseira) - (quantidadeFormas * pesoFormaMassa);
 
         // SOBRA DE CONCRETO
         if(kilosSobrandoConcreto< 0){
@@ -175,7 +179,7 @@ function calcularMasseiras() {
         }else if(kilosSobrandoConcreto > pesoMeioConcreto){
             numConcreto = numConcreto + 1
         }
-        kilosSobrandoConcreto = (numConcreto * pesoConcreto) + (numMeioConcreto * pesoMeioConcreto) - (quantidadeFormas * pesoFormaConcreto);
+        kilosSobrandoConcreto = Math.floor(numConcreto * pesoConcreto) + (numMeioConcreto * pesoMeioConcreto) - (quantidadeFormas * pesoFormaConcreto);
         
         
         // ATRIBUIR O VALOR RECONHRCIDO AO EXEMPLO
