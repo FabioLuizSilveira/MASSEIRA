@@ -6,7 +6,7 @@ function selecionarMasseira() {
 
     // FALAR QUAL AS FORMAS PARA MASSEIRA
     if (masseiraSelecionada === "Riviera" || masseiraSelecionada === "Stratti") {
-        formasDisponiveis = ["50x50x2.5", "60x60x2.5", "100x100x2.5"];
+        formasDisponiveis = ["50x50x2.5", "60x60x2.5", "75x75x2.5", "100x100x2.5"];
     } else if (masseiraSelecionada === "Evora") {
         formasDisponiveis = ["50x50x2.5", "60x60x1.5", "60x60x2", "60x60x2.5", "100x100x2.5"];
     }else if (masseiraSelecionada === "Dreno") {
@@ -55,6 +55,7 @@ function calcularMasseiras() {
         '60x60x2.5': 19.8,
         '60x60x2': 15.84,
         '60x60x1.5': 11.88,
+        '75x75x2.5': 30.9,
         '100x100x2.5': 55,
         'MADEIRA': 11,
         'INDUSTRIAL': 13.2,
